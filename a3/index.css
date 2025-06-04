@@ -1,0 +1,23 @@
+body{
+    font-family:fantasy;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f9f909;
+}
+#b{
+    background:none ;
+    color: orange;
+    border: 2px solid;
+    padding:1em 2em;
+    font-size: 1em;
+    transition:all 0.5s;
+}
+#b:hover{
+   border-color: #0ee42f;
+    color: white;
+    box-shadow: 0 0.5em 0.5em -0.4em blue;
+    transform: translateY(-0.25em);
+    cursor: pointer;
+}
