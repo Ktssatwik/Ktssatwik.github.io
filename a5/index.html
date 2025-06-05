@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    function p()
+    {
+        let a=document.getElementById("name").value;
+        let b=document.getElementById("email").value;
+        let c=document.getElementById("pass").value;
+
+        document.getElementById("res").innerHTML=
+        "name: "+a+"<br>"+
+        "email: "+b+"<br>"+
+        "password: "+c+"<br>"
+    }
+    </script>
+</head>
+<body>
+    <h1>PLEASE FILL THE FORM</h1>
+    <form action="">
+        <label for="name">Enter Name</label>
+        <input type="text" name="name" id="name" placeholder="name" required>
+        <br>
+        <label for="email">Enter email</label>
+        <input type="email" name="email" id="email"  placeholder="email">
+        <br>
+        <label for="pass">Enter Password</label>
+        <input type="password" name="pass" id="pass"  placeholder="password" required>
+        <br>
+        <button onclick="p()">submit</button>
+    </form>
+    <div id="res">
+
+    </div>
+</body>
+</html>
