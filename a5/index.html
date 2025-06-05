@@ -11,15 +11,20 @@
         let b=document.getElementById("email").value;
         let c=document.getElementById("pass").value;
 
-        document.getElementById("res").innerHTML=
-        "name: "+a+"<br>"+
-        "email: "+b+"<br>"+
-        "password: "+c+"<br>"
+        let str=`name : ${a} <br> email : ${b} <br> password : ${c} <br> `
+
+        res.innerHTML= str
+
+        // res.innerHTML=
+        // "name: "+a+"<br>"+
+        // "email: "+b+"<br>"+
+        // "password: "+c+"<br>"
     }
     </script>
 </head>
 <body>
     <h1>PLEASE FILL THE FORM</h1>
+    <!-- <form action="#"> -->
         <label for="name">Enter Name</label>
         <input type="text" name="name" id="name" placeholder="name" required>
         <br>
@@ -31,6 +36,7 @@
         <br>
         <button onclick="p()">submit</button>
     <hr>
+    <!-- </form> -->
     <div id="res">
 
     </div>
