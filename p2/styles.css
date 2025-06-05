@@ -1,5 +1,9 @@
 .App-Container{
-    margin: auto;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 10px;
     border: 1px solid gray;
     border-radius: 10px;
