@@ -13,8 +13,13 @@
       }
       function search() {
         const b = document.getElementById("fruits").value;
-        f = f.filter((e) => e == b);
-        display();
+        let vr = f.filter((e) => e == b);
+        let str = vr
+          .map(
+            (f) => `<li>${f}  <button onclick=del('${f}')>delete</button></li>`
+          )
+          .join("");
+        document.getElementById("res").innerHTML = str;
       }
       function display() {
         let str = f
