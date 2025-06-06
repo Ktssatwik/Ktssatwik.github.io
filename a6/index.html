@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const f=[];
+        const adding= () => {
+            let a=document.getElementById("fruits").value;
+            f.push(a);
+            let str=`${f}<br>`
+
+            res.innerHTML=str;
+        }
+
+    </script>
+</head>
+<body>
+    <h1>FRUITS LIST</h1>
+    <input type="text" id="fruits">
+    <button onclick="adding()"> ADD </button>
+    <div id="res">
+
+    </div>
+</body>
+</html>
