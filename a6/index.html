@@ -1,27 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
     <script>
-        let f=[];
-        const adding= () => {
-            let a=document.getElementById("fruits").value;
-            f.push(a);
-            let str=`${f}<br>`
-
-            res.innerHTML=str;
-        }
-
+      let f = [];
+      function del(value) {
+        f = f.filter((e) => e != value);
+        display();
+      }
+      function search() {
+        const b = document.getElementById("fruits").value;
+        f = f.filter((e) => e == b);
+        display();
+      }
+      function display() {
+        let str = f
+          .map(
+            (f) => `<li>${f}  <button onclick=del('${f}')>delete</button></li>`
+          )
+          .join("");
+        document.getElementById("res").innerHTML = str;
+      }
+      function adding() {
+        const a = document.getElementById("fruits").value;
+        f.push(a);
+        display();
+      }
     </script>
-</head>
-<body>
+  </head>
+  <body>
     <h1>FRUITS LIST</h1>
-    <input type="text" id="fruits">
-    <button onclick="adding()"> ADD </button>
-    <div id="res">
-
-    </div>
-</body>
+    <input type="text" id="fruits" />
+    <button onclick="adding()">ADD</button>
+    <button onclick="search()">search</button>
+    <div id="res"></div>
+  </body>
 </html>
