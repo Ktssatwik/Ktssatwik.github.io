@@ -21,27 +21,33 @@
             .then((users) => {
               let name = document.getElementById("txtname").value;
               const u = users.find((element) => element.name === name);
+              let str = "";
+              let store, store_name;
+
               if (u) {
                 store = u.id;
                 store_name = u.name;
+                fetchPosts(store, store_name);
               } else {
-                str = `<center><h1>NAME NOT PRESENT IN THE LIST<h1><center>`;
+                str = `<center><h1>NAME NOT PRESENT IN THE LIST</h1></center>`;
+                document.getElementById("out").innerHTML = str;
+                document.getElementById("inn").innerHTML = "";
               }
-              out.innerHTML = str;
             });
+        };
 
+        const fetchPosts = (store, store_name) => {
           const url2 = "https://jsonplaceholder.typicode.com/posts";
           let str2 = "<div>";
+          let s = `POSTS OF ${store_name} WHOSE ID IS ${store} ARE : <br><br>`;
           fetch(url2)
             .then((res) => res.json())
             .then((users) => {
-              users.map((user) => {
+              users.forEach((user) => {
                 if (store == user.userId) {
-                  s = `POSTS OF ${store_name} WHOSE ID IS ${store} ARE : <br><br>`;
-                  str2 += `<div>TITLE : ${user.title} <br> BODY: ${user.body}</div><br>`;
+                  str2 += `<div>TITLE: ${user.title} <br> BODY: ${user.body}</div><br>`;
                 }
               });
-
               inn.innerHTML = s + str2 + "</div>";
             });
         };
