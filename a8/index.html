@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>API'S AND STUFF</title>
+  </head>
+  <body>
+    <h1 id="h1"><b>SEARCH THE NAME OF YOUR PERSON :</b></h1>
+    <div id="but">
+      <input type="text" id="txtname" />
+      <button onclick="search()" id="but2">submit</button>
+    </div>
+    <div id="dvusers">
+      <script>
+        const search = () => {
+          const url = "https://jsonplaceholder.typicode.com/users";
+          fetch(url)
+            .then((res) => res.json())
+            .then((users) => {
+              let name = document.getElementById("txtname").value;
+              const u = users.find((element) => element.name === name);
+              if (u) {
+                store = u.id;
+                store_name = u.name;
+              } else {
+                str = ` NAME NOT PRESENT IN THE LIST`;
+              }
+              out.innerHTML = str;
+            });
+
+          const url2 = "https://jsonplaceholder.typicode.com/posts";
+          let str2 = "<div>";
+          fetch(url2)
+            .then((res) => res.json())
+            .then((users) => {
+              users.map((user) => {
+                if (store == user.userId) {
+                  s = `POSTS OF ${store_name} WHOSE ID IS ${store} ARE : <br><br>`;
+                  str2 += `<div>TITLE : ${user.title} <br> BODY: ${user.body}</div><br>`;
+                }
+              });
+
+              inn.innerHTML = s + str2 + "</div>";
+            });
+        };
+      </script>
+    </div>
+    <div id="out"></div>
+    <div id="inn"></div>
+  </body>
+</html>

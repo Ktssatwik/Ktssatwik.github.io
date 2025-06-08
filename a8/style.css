@@ -1,0 +1,68 @@
+#h1
+{
+    text-align: center;
+    color: rgb(5, 219, 101);
+
+}
+
+#h1:hover{
+    transition-duration: 1s;
+    color: orange;
+    scale: 1.2;
+}
+
+#but
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 200px;
+}
+
+#txtname
+{
+    background-color: pink;
+    border-radius: 10px;
+    width: 32%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    height: 40%;
+    font-size: xx-large;
+    color: blue;
+    margin: 30px;
+    text-align: center;
+    border: 10px double gray;
+}
+
+#but2{
+    background-color: rgb(51, 131, 235);
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    border: 1px solid green;
+    font-size: x-large;
+    font-family: cursive;
+    font-weight: 800;
+    text-transform: capitalize;
+}
+
+#inn
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    flex-direction: column;
+    font-size: large;
+    line-height: 1.2;
+    letter-spacing: 2px;
+    margin: 30px auto;
+    border: 4px solid maroon;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: beige;
+    padding-top: 30px;
+}
